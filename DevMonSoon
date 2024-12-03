@@ -18,6 +18,7 @@
 		})
 --If game does not have a script in the MonSoonHub
 	else
+		task.wait(5)
 		print ("Game ID: UNSUPORTED")
 		print (game.PlaceId)
 		game:GetService("StarterGui"):SetCore("SendNotification",{
@@ -25,6 +26,3 @@
 			Text = "No script found for current Instance."
 	})
 end
-
-
-task.wait(5)
