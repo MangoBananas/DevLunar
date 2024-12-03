@@ -1,6 +1,30 @@
 --Displayed that the script has connected to the Roblox Client.
-print ("Github Script Connected!")
+	print ("Github Script Connected!")
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = "Connection Stable",
 		Text = "Script has connected."
 	})
+
+--Checks what game it has connected to
+	print ("Checking Game...")
+--If game is Dragon Adventures:
+	if game.PlaceId == 3475397644 then
+		task.wait(5)
+		print ("Game ID: Dragon Adventures")
+		print (game.PlaceId)
+		game:GetService("StarterGui"):SetCore("SendNotification",{
+			Title = "Script Found",
+			Text = "Opening MonSoonHub..."
+		})
+--If game does not have a script in the MonSoonHub
+	else
+		print ("Game ID: UNSUPORTED")
+		print (game.PlaceId)
+		game:GetService("StarterGui"):SetCore("SendNotification",{
+			Title = "Script Unavalable",
+			Text = "No script found for current Instance."
+	})
+end
+
+
+task.wait(5)
