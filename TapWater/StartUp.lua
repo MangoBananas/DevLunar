@@ -6,6 +6,7 @@
 		Text = "Script has connected.\nFinding Game..."
 	})
 	task.wait(1)
+	print ("Identifing Game. Do nor re-execute")
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = "Loading...",
 		Text = "Please do not re-execute."
