@@ -1,7 +1,9 @@
---Displayed that the script has connected to the Roblox Client.
+	repeat task.wait() until game:IsLoaded()
+--Display that the script has connected to the Roblox Client.
 	print ("Github Script Connected!")
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = "Connection Stable",
-		Text = "Script has connected."
+		Text = "Script has connected.\nFinding Game..."
 	})
-loadstring(game:HttpsGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/Tsunami/GameIdentifier"))()
+--Loads the Game Identifier.
+	loadstring(game:HttpsGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/Tsunami/GameIdentifier"))()
