@@ -3,3 +3,8 @@
 --KICK PLAYER
 
 print ("Script is detected by the anticheat. Please wait for a patch.")
+game:GetService("StarterGui"):SetCore("SendNotification",{
+			Title = "DETECTED",
+			Text = "Kicking Player.\nPlease wait for a new patch."
+		})
+game.Players.LocalPlayer:Kick("(ERROR ID: Hurricane)\n\nScript is detected.\nPlease wait for a patch.")
