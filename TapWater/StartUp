@@ -6,4 +6,5 @@
 		Text = "Script has connected.\nFinding Game..."
 	})
 --Loads the Game Identifier.
-	loadstring(game:HttpsGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/Tsunami/GameIdentifier"))()
+	local StartTime = tick()
+	local A = loadstring(game:HttpsGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/Tsunami/GameIdentifier"))()
