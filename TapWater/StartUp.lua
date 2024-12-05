@@ -5,5 +5,6 @@
 		Title = "Connection Stable",
 		Text = "Script has connected.\nFinding Game..."
 	})
+	task.wait(5)
 --Loads The Game Identifier.
-	loadstring(game:HttpsGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/Tsunami/GameIdentifier.lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/Tsunami/GameIdentifier.lua"))()
