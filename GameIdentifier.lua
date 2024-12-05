@@ -3,7 +3,7 @@
 
 --Testing
 --THIS SHOULD BE REPLACED WITH A LOAD RAW GITHUB STRING
-if game.PlaceId == 120422988822333 then
+if game.PlaceId == 6590224210 then
 	print ("Game ID: TEST")
 	print (game.PlaceId)
 	game:GetService("StarterGui"):SetCore("SendNotification",{
