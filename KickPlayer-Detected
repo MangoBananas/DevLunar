@@ -1,5 +1,0 @@
--- This script is used when the code is detected.
-
---KICK PLAYER
-
-print ("Script is detected by the anticheat. Please wait for a patch.")
