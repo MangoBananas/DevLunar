@@ -25,15 +25,15 @@ print ("Dragon adventures script has been located and is running")
       			RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    		},
 
-   		KeySystem = false, -- Set this to true to use our key system
+   		KeySystem = true, -- Set this to true to use our key system
    			KeySettings = {
       				Title = "MonSoon Hub",
       				Subtitle = "Key System",
-      				Note = "Hello", -- Use this to tell the user how to get a key
+      				Note = "Find a private server to use the script. Many DA Youtubers have one.", -- Use this to tell the user how to get a key
       				FileName = "Op3perationFore7stFire", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
       				SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       				GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      				Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+      				Key = {"Hello","key"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    			}
 		})
 	--Tabs
@@ -45,17 +45,41 @@ print ("Dragon adventures script has been located and is running")
 		--Sections
 		local CreatorInformation = MainTab:CreateSection("Creator Information")
 		local Main2 = MainTab:CreateSection("Section Example")
-		local AutoResources = AutoFarm:CreateSection("Auto Colect Food/Material/Bones")
+		local AutoFarmSection = AutoFarm:CreateSection("Automaticly Collect Food, Materials, Bones, and Chest")
 			local AutoMob = AutoFarm:CreateToggle({
-   				Name = "Toggle Example",
+   				Name = "Auto Mob",
    				CurrentValue = false,
-   				Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   				Flag = "autoMobToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    				Callback = function(Value)
    					-- The function that takes place when the toggle is pressed
   					-- The variable (Value) is a boolean on whether the toggle is true or false
    				end,
 			})
-		local AutoChest = AutoFarm:CreateSection("Auto Collect Chest")
+			local AutoResources = AutoFarm:CreateToggle({
+   				Name = "Auto Resources", 
+   				CurrentValue = false,
+   				Flag = "autoResourceToggle",
+   				Callback = function(Value)
+   				end,
+			})
+			local Dropdown = Tab:CreateDropdown({
+  	 			Name = "Resources Nodes",
+   				Options = {"Food","Materials","Bones"},
+   				CurrentOption = {"Option 1"},
+   				MultipleOptions = false,
+   				Flag = "resourceOptionsDropdown", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   				Callback = function(Options)
+   					-- The function that takes place when the selected option is changed
+   					-- The variable (Options) is a table of strings for the current selected options
+   				end,
+			})
+			local AutoChest = AutoFarm:CreateToggle({
+   				Name = "Auto Chest",
+   				CurrentValue = false,
+   				Flag = "autoChectToggle",
+   				Callback = function(Value)
+   				end,
+			})
 		local GodModeDragon = DragonStats:CreateSection("Unkillable Dragon")
 		local tele1 = Teleport:CreateSection("tele1")
 		local tele2 = Teleport:CreateSection("Section Example")
