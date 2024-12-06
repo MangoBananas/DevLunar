@@ -6,9 +6,9 @@ print ("Dragon adventures script has been located and is running")
 		local Window = Rayfield:CreateWindow({
    			Name = "MonSoon Hub",
    			Icon = 0,
-   			LoadingTitle = "Loding Title",
-   			LoadingSubtitle = "Loding Subtitle",
-   			Theme = "Ocean", -- https://docs.sirius.menu/rayfield/configuration/themes
+   			LoadingTitle = "MonSoon Hub",
+   			LoadingSubtitle = "Loading...",
+   			Theme = "Bloom", -- https://docs.sirius.menu/rayfield/configuration/themes
 
   			 DisableRayfieldPrompts = false,
   			 DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
@@ -27,10 +27,10 @@ print ("Dragon adventures script has been located and is running")
 
    		KeySystem = true, -- Set this to true to use our key system
    			KeySettings = {
-      				Title = "Key Title",
+      				Title = "MonSoon Hub",
       				Subtitle = "Key System",
-      				Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
-      				FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      				Note = "Hello", -- Use this to tell the user how to get a key
+      				FileName = "Op3perationFore7stFire", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
       				SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       				GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
       				Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
