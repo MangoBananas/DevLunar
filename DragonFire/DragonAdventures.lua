@@ -56,7 +56,7 @@ print ("Dragon adventures script has been located and is running")
 			local Dropdown = Tab:CreateDropdown({
   	 			Name = "Resources Nodes",
    				Options = {"Food","Materials","Bones"},
-   				CurrentOption = {"Option 1"},
+   				CurrentOption = {"Food"},
    				MultipleOptions = false,
    				Flag = "resourceOptionsDropdown", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    				Callback = function(Options)
