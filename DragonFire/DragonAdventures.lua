@@ -46,9 +46,18 @@ print ("Dragon adventures script has been located and is running")
 		local CreatorInformation = MainTab:CreateSection("Creator Information")
 		local Main2 = MainTab:CreateSection("Section Example")
 		local AutoResources = AutoFarm:CreateSection("Auto Colect Food/Material/Bones")
-		local AutoMob = AutoFarm:CreateSection("Auto Kill Mobs")
+			local AutoMob = AutoFarm:CreateToggle({
+   				Name = "Toggle Example",
+   				CurrentValue = false,
+   				Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   				Callback = function(Value)
+   					-- The function that takes place when the toggle is pressed
+  					-- The variable (Value) is a boolean on whether the toggle is true or false
+   				end,
+			})
 		local AutoChest = AutoFarm:CreateSection("Auto Collect Chest")
 		local GodModeDragon = DragonStats:CreateSection("Unkillable Dragon")
 		local tele1 = Teleport:CreateSection("tele1")
 		local tele2 = Teleport:CreateSection("Section Example")
 		local Set1 = Settings:CreateSection("Section Example")
+			--Toggles
