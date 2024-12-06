@@ -8,7 +8,7 @@ print ("Dragon adventures script has been located and is running")
    			Icon = 0,
    			LoadingTitle = "MonSoon Hub",
    			LoadingSubtitle = "Loading...",
-   			Theme = "Bloom", -- https://docs.sirius.menu/rayfield/configuration/themes
+   			Theme = "AmberGlow", -- https://docs.sirius.menu/rayfield/configuration/themes
 
   			 DisableRayfieldPrompts = false,
   			 DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
@@ -36,3 +36,5 @@ print ("Dragon adventures script has been located and is running")
       				Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    			}
 		})
+	--Tabs
+	local MainTab = Window:CreateTab("Main", cloud-moon-rain) -- Title, Image
