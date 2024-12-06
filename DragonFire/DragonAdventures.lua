@@ -5,7 +5,7 @@ print ("Dragon adventures script has been located and is running")
 		--
 		local Window = Rayfield:CreateWindow({
    			Name = "MonSoon Hub",
-   			Icon = 0,
+   			Icon = "cloudy",
    			LoadingTitle = "MonSoon Hub",
    			LoadingSubtitle = "Loading...",
    			Theme = "AmberGlow", -- https://docs.sirius.menu/rayfield/configuration/themes
@@ -46,15 +46,6 @@ print ("Dragon adventures script has been located and is running")
 		local CreatorInformation = MainTab:CreateSection("Creator Information")
 		local Main2 = MainTab:CreateSection("Section Example")
 		local AutoFarmSection = AutoFarm:CreateSection("Automaticly Collect Food, Materials, Bones, and Chest")
-			local AutoMob = AutoFarm:CreateToggle({
-   				Name = "Auto Mob",
-   				CurrentValue = false,
-   				Flag = "autoMobToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   				Callback = function(Value)
-   					-- The function that takes place when the toggle is pressed
-  					-- The variable (Value) is a boolean on whether the toggle is true or false
-   				end,
-			})
 			local AutoResources = AutoFarm:CreateToggle({
    				Name = "Auto Resources", 
    				CurrentValue = false,
@@ -71,6 +62,15 @@ print ("Dragon adventures script has been located and is running")
    				Callback = function(Options)
    					-- The function that takes place when the selected option is changed
    					-- The variable (Options) is a table of strings for the current selected options
+   				end,
+			})
+			local AutoMob = AutoFarm:CreateToggle({
+   				Name = "Auto Mob",
+   				CurrentValue = false,
+   				Flag = "autoMobToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   				Callback = function(Value)
+   					-- The function that takes place when the toggle is pressed
+  					-- The variable (Value) is a boolean on whether the toggle is true or false
    				end,
 			})
 			local AutoChest = AutoFarm:CreateToggle({
