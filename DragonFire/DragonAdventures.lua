@@ -25,7 +25,7 @@ print ("Dragon adventures script has been located and is running")
       			RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    		},
 
-   		KeySystem = true, -- Set this to true to use our key system
+   		KeySystem = false, -- Set this to true to use our key system
    			KeySettings = {
       				Title = "MonSoon Hub",
       				Subtitle = "Key System",
@@ -37,8 +37,18 @@ print ("Dragon adventures script has been located and is running")
    			}
 		})
 	--Tabs
-	local MainTab = Window:CreateTab("Main", "cloudy") -- Title, Image
-	local AutoFarm = Window:CreateTab("Auto", "gamepad") -- Title, Image
-	local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Title, Image
-	local Teleport = Window:CreateTab("Teleport", "locate") -- Title, Image
-	local Settings = Window:CreateTab("Settings", "settings") -- Title, Image
+	local MainTab = Window:CreateTab("Main", "cloudy") -- Main Tab, containing 
+	local AutoFarm = Window:CreateTab("Auto", "gamepad") -- Auto Farm, Automaticly kills mobs, collect recorces (Separate food, materials, and bones), and collects chest.
+	local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Dragon Stats
+	local Teleport = Window:CreateTab("Teleport", "locate") -- Teleportation
+	local Settings = Window:CreateTab("Settings", "settings") -- Settings
+		--Sections
+		local CreatorInformation = MainTab:CreateSection("Creator Information")
+		local Main2 = MainTab:CreateSection("Section Example")
+		local AutoResources = AutoFarm:CreateSection("Auto Colect Food/Material/Bones")
+		local AutoMob = AutoFarm:CreateSection("Auto Kill Mobs")
+		local AutoChest = AutoFarm:CreateSection("Auto Collect Chest")
+		local GodModeDragon = DragonStats:CreateSection("Unkillable Dragon")
+		local tele1 = Teleport:CreateSection("tele1")
+		local tele2 = Teleport:CreateSection("Section Example")
+		local Set1 = Settings:CreateSection("Section Example")
