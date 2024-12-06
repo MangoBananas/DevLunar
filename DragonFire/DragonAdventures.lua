@@ -37,4 +37,8 @@ print ("Dragon adventures script has been located and is running")
    			}
 		})
 	--Tabs
-	local MainTab = Window:CreateTab("Main", cloud-moon-rain) -- Title, Image
+	local MainTab = Window:CreateTab("Main", "cloudy") -- Title, Image
+	local AutoFarm = Window:CreateTab("Auto", "gamepad") -- Title, Image
+	local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Title, Image
+	local Teleport = Window:CreateTab("Teleport", "locate") -- Title, Image
+	local Settings = Window:CreateTab("Settings", "settings") -- Title, Image
