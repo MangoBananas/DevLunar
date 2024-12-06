@@ -7,4 +7,4 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 			Title = "DETECTED",
 			Text = "Kicking Player.\nPlease wait for a new patch.\nDo not re-execute."
 		})
-game.Players.LocalPlayer:Kick("(ERROR ID: Hurricane)\n\nScript is detected.\nPlease wait for a patch.")
+game.Players.LocalPlayer:Kick("\n(ERROR ID: Hurricane)\n\nScript is detected.\nPlease wait for a patch.\n")
