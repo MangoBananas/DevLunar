@@ -19,7 +19,7 @@ if game.PlaceId == 6590224210 then
 		    Title = "Script Found",
 		    Text = "Opening MonSoonHub..."
 	    })
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/TropicalStorms/errorHurricane.lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/TropicalStorms/DragonFire/DragonAdventures.lua"))()
 	--Game is not in the system:
 else
 	task.wait(5)
