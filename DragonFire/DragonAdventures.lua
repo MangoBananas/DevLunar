@@ -116,7 +116,7 @@ local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 		firetouchinterest(Player.Character.HumanoidRootPart, v.Parent.Parent.Parent.TeleportPart, 0)
 		end,
 		end,
---		end,
+		end,
 	end,
 })
 end
