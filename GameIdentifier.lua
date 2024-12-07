@@ -7,7 +7,7 @@ if game.PlaceId == 6590224210 then
 	print (game.PlaceId)
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = "Script Found",
-		Text = "Opening MonSoonHub..."
+		Text = MarketplaceService:GetProductInfo(game.PlaceId).Name
 	})
 --This should be changes as this should be the test script.
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/TropicalStorms/DragonFire/DragonAdventures.lua"))()
@@ -19,7 +19,7 @@ if game.PlaceId == 6590224210 then
 		Title = "Script Found",
 		Text = "Opening MonSoonHub..."
 	})
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/TropicalStorms/DragonFire/DragonAdventures"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/TropicalStorms/DragonFire/DragonAdventures.lua"))()
 	--Game is not in the system:
 else
 	task.wait(5)
