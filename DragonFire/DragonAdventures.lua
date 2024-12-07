@@ -119,7 +119,7 @@ local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
    	end,
 	})
 local WorldTeleport = Teleport:CreateSection("Teleport to the selected world")
-	local World Teleport = Teleport:CreateButton({
+	local WorldTeleportPress = Teleport:CreateButton({
    		Name = "Teleport",
    		Callback = function()
    	end,
