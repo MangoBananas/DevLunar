@@ -1,5 +1,6 @@
 -- Print in console showing that the script was found.
 print ("Dragon adventures script has been located and is running")
+----------------------------------------------------------------------------------------------------------------
 	-- Base for the UI
 	local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 		--
@@ -7,7 +8,7 @@ print ("Dragon adventures script has been located and is running")
    			Name = "MonSoon Hub",
    			Icon = "cloudy",
    			LoadingTitle = "MonSoon Hub",
-   			LoadingSubtitle = "Loading...",
+   			LoadingSubtitle = "Loading: " .. MarketplaceService:GetProductInfo(game.PlaceId).Name,
    			Theme = "AmberGlow", -- https://docs.sirius.menu/rayfield/configuration/themes
 
   			 DisableRayfieldPrompts = false,
@@ -25,65 +26,105 @@ print ("Dragon adventures script has been located and is running")
       			RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    		},
 
-   		KeySystem = true, -- Set this to true to use our key system
+   		KeySystem = false, -- Set this to true to use our key system
    			KeySettings = {
       				Title = "MonSoon Hub",
       				Subtitle = "Key System",
-      				Note = "Find a private server to use the script. Many DA Youtubers have one.", -- Use this to tell the user how to get a key
+      				Note = "Find a private server to use the script.\nMany DA Youtubers have one.", -- Use this to tell the user how to get a key
       				FileName = "Op3perationFore7stFire", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
       				SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       				GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
       				Key = {"Hello","key"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    			}
 		})
-	--Tabs
-	local MainTab = Window:CreateTab("Main", "cloudy") -- Main Tab, containing 
-	local AutoFarm = Window:CreateTab("Auto", "gamepad") -- Auto Farm, Automaticly kills mobs, collect recorces (Separate food, materials, and bones), and collects chest.
-	local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Dragon Stats
-	local Teleport = Window:CreateTab("Teleport", "locate") -- Teleportation
-	local Settings = Window:CreateTab("Settings", "settings") -- Settings
-		--Sections
-		local CreatorInformation = MainTab:CreateSection("Creator Information")
-		local Main2 = MainTab:CreateSection("Section Example")
-		local AutoFarmSection1 = AutoFarm:CreateSection("Automaticly Collect Food, Materials, an Bonemeal")
-			local AutoResources = AutoFarm:CreateToggle({
-   				Name = "Auto Resources", 
-   				CurrentValue = false,
-   				Flag = "autoResourceToggle",
-   				Callback = function(Value)
-   				end,
-			})
-			local ResourceName = AutoFarm:CreateDropdown({
-  	 			Name = "Resources Nodes",
-   				Options = {"Food","Materials","Bonemeal"},
-   				CurrentOption = {"Food"},
-   				MultipleOptions = false,
-   				Flag = "resourceOptionsDropdown", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   				Callback = function(Options)
-   					-- The function that takes place when the selected option is changed
-   					-- The variable (Options) is a table of strings for the current selected options
-   				end,
-			})
-					local Divider = AutoFarm:CreateDivider()
-			local AutoFarmSection2 = AutoFarm:CreateSection("Automaticly Collect Meat and Fish")
-			local AutoMob = AutoFarm:CreateToggle({
-   				Name = "Auto Mob",
-   				CurrentValue = false,
-   				Flag = "autoMobToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   				Callback = function(Value)
-   					-- The function that takes place when the toggle is pressed
-  					-- The variable (Value) is a boolean on whether the toggle is true or false
-   				end,
-			})
-			local AutoChest = AutoFarm:CreateToggle({
-   				Name = "Auto Chest",
-   				CurrentValue = false,
-   				Flag = "autoChectToggle",
-   				Callback = function(Value)
-   				end,
-			})
-		local GodModeDragon = DragonStats:CreateSection("Unkillable Dragon")
-		local tele1 = Teleport:CreateSection("tele1")
-		local tele2 = Teleport:CreateSection("Section Example")
-		local Set1 = Settings:CreateSection("Section Example")
-			--Toggles
+----------------------------------------------------------------------------------------------------------------
+--------Tabs
+local MainTab = Window:CreateTab("Main", "cloudy") -- Main Tab, containing 
+local AutoFarm = Window:CreateTab("Auto", "gamepad") -- Auto Farm, Automaticly kills mobs, collect recorces (Separate food, materials, and bones), eggs, and chest.
+local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Dragon Stats
+local Teleport = Window:CreateTab("Teleport", "locate") -- Teleportation
+local Settings = Window:CreateTab("Settings", "settings") -- Settings
+--------Sections
+local CreatorInformation = MainTab:CreateSection("Creator Information")
+--"V.G Hub: Game " .. MarketplaceService:GetProductInfo(game.PlaceId).Name
+----------------------------------------------------------------------------------------------------------------
+local AutoFarmSection0 = AutoFarm:CreateSection("Automaticly Collect Food, Materials, an Bonemeal")
+	local AutoResources = AutoFarm:CreateToggle({
+   		Name = "Collect Resources", 
+   		CurrentValue = false,
+		Flag = "autoResourceToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   		Callback = function(Value)
+			-- The function that takes place when the toggle is pressed
+  			-- The variable (Value) is a boolean on whether the toggle is true or false
+   	end,
+	})
+	local ResourceName = AutoFarm:CreateDropdown({
+  	 	Name = "Resources Nodes",
+   		Options = {"Food","Materials","Bonemeal"},
+   		CurrentOption = {"Food"},
+   		MultipleOptions = false,
+   		Flag = "resourceOptionsDropdown", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   		Callback = function(Options)
+   			-- The function that takes place when the selected option is changed
+   			-- The variable (Options) is a table of strings for the current selected options
+   	end,
+	})
+local Divider1 = AutoFarm:CreateDivider()
+
+local AutoFarmSection1 = AutoFarm:CreateSection("Automaticly Collect Meat and Fish")
+	local AutoMob = AutoFarm:CreateToggle({
+   		Name = "Auto Mob",
+   		CurrentValue = false,
+   		Flag = "autoMobToggle", 
+		Callback = function(Value)
+   	end,
+	})
+	local AutoFish = AutoFarm:CreateToggle({
+   		Name = "Auto Fish",
+   		CurrentValue = false,
+   		Flag = "autoFishToggle",
+		Callback = function(Value)
+   	end,
+	})
+local Divider2 = AutoFarm:CreateDivider()
+
+local AutoFarmSection2 = AutoFarm:CreateSection("Automaticly Collect Chest and Eggs")
+	local AutoChest = AutoFarm:CreateToggle({
+   		Name = "Find Chest",
+   		CurrentValue = false,
+   		Flag = "autoChestToggle",
+   		Callback = function(Value)
+   	end,
+	})
+	local AutoEgg = AutoFarm:CreateToggle({
+   		Name = "Collect Eggs",
+   		CurrentValue = false,
+   		Flag = "autoEggToggle",
+   		Callback = function(Value)
+   	end,
+	})
+local Divider3 = AutoFarm:CreateDivider()
+----------------------------------------------------------------------------------------------------------------
+local GodModeDragon = DragonStats:CreateSection("Unkillable Dragon")
+----------------------------------------------------------------------------------------------------------------
+local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
+	local Button = Tab:CreateButton({
+   		Name = "To Plot",
+   		Callback = function()
+   			-- The function that takes place when the button is pressed
+   	end,
+	})
+local WorldTeleport = Teleport:CreateSection("Teleport to the selected world")
+local WorldTeleportClarification = Teleport:CreateSection("(Event world are not included)")
+	local ResourceName = AutoFarm:CreateDropdown({
+  	 	Name = "Worlds",
+   		Options = {"Origins","Grasslands","Jungle"},
+   		CurrentOption = {"Grasslands"},
+   		MultipleOptions = false,
+   		Flag = "worldTeleportation", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   		Callback = function(Options)
+   	end,
+	})
+----------------------------------------------------------------------------------------------------------------
+local Set1 = Settings:CreateSection("Section Example")
+----------------------------------------------------------------------------------------------------------------
