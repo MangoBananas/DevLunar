@@ -115,11 +115,11 @@ local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 		if  v.Text == Player.PlayerGui.WorkspaceGui[Player.Name .. "_DisplayGui"].ContainerFrame.NameLabel.Text then
 		print ("Going to your base plot --> --> -->")
 		firetouchinterest(Player.Character.HumanoidRootPart, v.Parent.Parent.Parent.TeleportPart, 0)
-		end,
-		end,
-		end,
-	end,
-end,
+		end
+		end
+		end
+	end
+end
 })
 end
 local WorldTeleport = Teleport:CreateSection("Teleport to the selected world")
