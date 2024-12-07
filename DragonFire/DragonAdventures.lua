@@ -109,16 +109,17 @@ if game.PlaceId == 3475397644 then
 local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 	local PlotButton = Teleport:CreateButton({
    		Name = "Teleport to your plot",
-   		Callback = function()
-		for i, v in next, Workspace.Interactions:GetDescendants() do
-		if v:IsA("TextLabel") and v.Name:match("Player")  then
-		if  v.Text == Player.PlayerGui.WorkspaceGui[Player.Name .. "_DisplayGui"].ContainerFrame.NameLabel.Text then
---		print ("Going to your base plot --> --> -->")
-		firetouchinterest(Player.Character.HumanoidRootPart, v.Parent.Parent.Parent.TeleportPart, 0)
+   		Callback = function(
+			for i, v in next, Workspace.Interactions:GetDescendants() do
+			if v:IsA("TextLabel") and v.Name:match("Player")  then
+			if  v.Text == Player.PlayerGui.WorkspaceGui[Player.Name .. "_DisplayGui"].ContainerFrame.NameLabel.Text then
+--			print ("Going to your base plot --> --> -->")
+			firetouchinterest(Player.Character.HumanoidRootPart, v.Parent.Parent.Parent.TeleportPart, 0)
+			end,
+			end,
+			end,
+			)
 		end,
-		end,
-		end,
-	end,
 })
 end
 local WorldTeleport = Teleport:CreateSection("Teleport to the selected world")
