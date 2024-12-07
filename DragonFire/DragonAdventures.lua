@@ -5,7 +5,7 @@ print ("Dragon adventures script has been located and is running")
 	local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 		--
 		local Window = Rayfield:CreateWindow({
-   			Name = "MonSoon Hub",
+   			Name = "~:| MonSoon Hub |:~",
    			Icon = "cloudy",
    			LoadingTitle = "MonSoon Hub",
    			LoadingSubtitle = "Loading: " .. MarketplaceService:GetProductInfo(game.PlaceId).Name,
@@ -17,7 +17,7 @@ print ("Dragon adventures script has been located and is running")
    		ConfigurationSaving = {
       			Enabled = true,
       			FolderName = nil, -- Create a custom folder for your hub/game
-      			FileName = "MonSoon Hub"
+      			FileName = "MonSoonHub"
   		},
 
    		Discord = {
@@ -45,8 +45,12 @@ local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Dragon Stats
 local Teleport = Window:CreateTab("Teleport", "locate") -- Teleportation
 local Settings = Window:CreateTab("Settings", "settings") -- Settings
 --------Sections
-local CreatorInformation = MainTab:CreateSection("Creator Information")
---"V.G Hub: Game " .. MarketplaceService:GetProductInfo(game.PlaceId).Name
+local Label = MainTab:CreateLabel("Information (Label)", "cloud-sun", Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local CreatorInformation = MainTab:CreateSection("Information (Section)")
+local Paragraph1 = MainTab:CreateParagraph({Title = "Current Game:", Content = MarketplaceService:GetProductInfo(game.PlaceId).Name})
+local Paragraph2 = MainTab:CreateParagraph({Title = "Current UI:", Content = "Rayfield"})
+local Paragraph3 = MainTab:CreateParagraph({Title = "Script Creator:", Content = "DEVlunar"})
+local Paragraph4 = MainTab:CreateParagraph({Title = "Title Example", Content = "Content Example"})
 ----------------------------------------------------------------------------------------------------------------
 local AutoFarmSection0 = AutoFarm:CreateSection("Automaticly Collect Food, Materials, an Bonemeal")
 	local AutoResources = AutoFarm:CreateToggle({
@@ -108,7 +112,7 @@ local Divider3 = AutoFarm:CreateDivider()
 local GodModeDragon = DragonStats:CreateSection("Unkillable Dragon")
 ----------------------------------------------------------------------------------------------------------------
 local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
-	local Button = Tab:CreateButton({
+	local PlotButton = Teleport:CreateButton({
    		Name = "To Plot",
    		Callback = function()
    			-- The function that takes place when the button is pressed
@@ -116,13 +120,19 @@ local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 	})
 local WorldTeleport = Teleport:CreateSection("Teleport to the selected world")
 local WorldTeleportClarification = Teleport:CreateSection("(Event world are not included)")
-	local ResourceName = AutoFarm:CreateDropdown({
+	local WorldList = Teleport:CreateDropdown({
   	 	Name = "Worlds",
-   		Options = {"Origins","Grasslands","Jungle"},
+   		Options = {"Undercity","Origins","Grassland","Jungle","Volcano","Tundra","Ocean","Desert","Fantasy","Wasteland","Prehistoric"},
    		CurrentOption = {"Grasslands"},
    		MultipleOptions = false,
-   		Flag = "worldTeleportation", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   		Callback = function(Options)
+   		Flag = "worldTeleportationSelection", 
+		Callback = function(Options)
+   	end,
+	})
+	local World Teleport = Teleport:CreateButton({
+   		Name = "To World?",
+   		Callback = function()
+   			-- The function that takes place when the button is pressed
    	end,
 	})
 ----------------------------------------------------------------------------------------------------------------
