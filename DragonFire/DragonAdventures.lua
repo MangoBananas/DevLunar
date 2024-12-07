@@ -107,7 +107,7 @@ local Divider3 = AutoFarm:CreateDivider()
 ----------------------------------------------------------------------------------------------------------------
 local GodModeDragon = DragonStats:CreateSection("Dragon Stats are unavalable at this time.")
 ----------------------------------------------------------------------------------------------------------------
-if game.PlaceId == 3475397644 then
+--if game.PlaceId == 3475397644 then
 local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 	local PlotButton = Teleport:CreateButton({
    		Name = "Teleport to your plot",
@@ -120,7 +120,6 @@ local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 				end,
 			end,
 	end,
-end,
 })
 
 local WorldTeleport = Teleport:CreateSection("Teleport to the selected world")
