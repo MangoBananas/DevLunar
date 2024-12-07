@@ -47,9 +47,9 @@ local Settings = Window:CreateTab("Settings", "settings") -- Settings
 --------Sections
 --local Label = MainTab:CreateLabel("Information (Label)", "cloud-sun", Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 local CreatorInformation = MainTab:CreateSection("Information (Section)")
---local Paragraph1 = MainTab:CreateParagraph({Title = "Current Game:", Content = 'MarketplaceService:GetProductInfo(game.PlaceId).Name'})
---local Paragraph2 = MainTab:CreateParagraph({Title = "Current UI:", Content = "Rayfield"})
---local Paragraph3 = MainTab:CreateParagraph({Title = "Script Creator:", Content = "DEVlunar"})
+local Paragraph1 = MainTab:CreateParagraph({Title = "Current Game:", Content = 'MarketplaceService:GetProductInfo(game.PlaceId).Name'})
+local Paragraph2 = MainTab:CreateParagraph({Title = "Current UI:", Content = "Rayfield"})
+local Paragraph = MainTab:CreateParagraph({Title = "Script Creator:", Content = "DEVlunar"})
 local Paragraph = MainTab:CreateParagraph({Title = "Title Example", Content = "Content Example"})
 ----------------------------------------------------------------------------------------------------------------
 local AutoFarmSection0 = AutoFarm:CreateSection("Automaticly Collect Food, Materials, an Bonemeal")
