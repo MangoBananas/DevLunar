@@ -112,13 +112,13 @@ local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 	local PlotButton = Teleport:CreateButton({
    		Name = "Teleport to your plot",
    		Callback = function()
-			for i, v in next, Workspace.Interactions:GetDescendants() do
-				if v:IsA("TextLabel") and v.Name:match("Player")  then
-					if  v.Text == Player.PlayerGui.WorkspaceGui[Player.Name .. "_DisplayGui"].ContainerFrame.NameLabel.Text then
-                        			firetouchinterest(Player.Character.HumanoidRootPart, v.Parent.Parent.Parent.TeleportPart, 0)
-                    			end,
-				end,
-			end,
+--		for i, v in next, Workspace.Interactions:GetDescendants() do
+--		if v:IsA("TextLabel") and v.Name:match("Player")  then
+--		if  v.Text == Player.PlayerGui.WorkspaceGui[Player.Name .. "_DisplayGui"].ContainerFrame.NameLabel.Text then
+--		firetouchinterest(Player.Character.HumanoidRootPart, v.Parent.Parent.Parent.TeleportPart, 0)
+--		end,
+--		end,
+--		end,
 	end,
 })
 
