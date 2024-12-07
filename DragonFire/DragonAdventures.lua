@@ -8,7 +8,7 @@ print ("Dragon adventures script has been located and is running")
    			Name = "~:| MonSoon Hub |:~",
    			Icon = "cloudy",
    			LoadingTitle = "MonSoon Hub",
-   			LoadingSubtitle = "Loading: " .. MarketplaceService:GetProductInfo(game.PlaceId).Name,
+   			LoadingSubtitle = "Loading: ", -- .. MarketplaceService:GetProductInfo(game.PlaceId).Name
    			Theme = "AmberGlow", -- https://docs.sirius.menu/rayfield/configuration/themes
 
   			 DisableRayfieldPrompts = false,
