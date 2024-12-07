@@ -45,12 +45,8 @@ local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Dragon Stats
 local Teleport = Window:CreateTab("Teleport", "locate") -- Teleportation
 local Settings = Window:CreateTab("Settings", "settings") -- Settings
 --------Sections
---local Label = MainTab:CreateLabel("Information (Label)", "cloud-sun", Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
-local CreatorInformation = MainTab:CreateSection("Information (Section)")
-local Paragraph = MainTab:CreateParagraph({Title = "Current Game:", Content = 'MarketplaceService:GetProductInfo(game.PlaceId).Name'})
-local Paragraph = MainTab:CreateParagraph({Title = "Current UI:", Content = "Rayfield"})
-local Paragraph = MainTab:CreateParagraph({Title = "Script Creator:", Content = "DEVlunar"})
---local Paragraph = MainTab:CreateParagraph({Title = "Title Example", Content = "Content Example"})
+local Label = MainTab:CreateLabel("Information", "cloud-sun", Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local CreatorInformation = MainTab:CreateSection("Current Game: " .. MarketplaceService:GetProductInfo(game.PlaceId).Name "\nCurrent UI: Rayfield\nScript Creator: Dev LunarMoons")
 ----------------------------------------------------------------------------------------------------------------
 local AutoFarmSection0 = AutoFarm:CreateSection("Automaticly Collect Food, Materials, an Bonemeal")
 	local AutoResources = AutoFarm:CreateToggle({
