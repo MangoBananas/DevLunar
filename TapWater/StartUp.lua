@@ -6,6 +6,6 @@
 		Text = "Script has connected.\nFinding Game..."
 	})
 	task.wait(5)
-	print ('Identifing Game')
+	print ("Identifing Game")
 --Loads The Game Identifier.
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/Tsunami/GameIdentifier.lua"))()
