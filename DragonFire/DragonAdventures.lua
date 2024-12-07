@@ -50,7 +50,7 @@ local CreatorInformation = MainTab:CreateSection("Information (Section)")
 --local Paragraph1 = MainTab:CreateParagraph({Title = "Current Game:", Content = 'MarketplaceService:GetProductInfo(game.PlaceId).Name'})
 --local Paragraph2 = MainTab:CreateParagraph({Title = "Current UI:", Content = "Rayfield"})
 --local Paragraph3 = MainTab:CreateParagraph({Title = "Script Creator:", Content = "DEVlunar"})
-local Paragraph4 = MainTab:CreateParagraph({Title = "Title Example", Content = "Content Example"})
+--local Paragraph4 = MainTab:CreateParagraph({Title = "Title Example", Content = "Content Example"})
 ----------------------------------------------------------------------------------------------------------------
 local AutoFarmSection0 = AutoFarm:CreateSection("Automaticly Collect Food, Materials, an Bonemeal")
 	local AutoResources = AutoFarm:CreateToggle({
