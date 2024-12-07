@@ -45,12 +45,12 @@ local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Dragon Stats
 local Teleport = Window:CreateTab("Teleport", "locate") -- Teleportation
 local Settings = Window:CreateTab("Settings", "settings") -- Settings
 --------Sections
-local Label = MainTab:CreateLabel("Information (Label)", "cloud-sun", Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+--local Label = MainTab:CreateLabel("Information (Label)", "cloud-sun", Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 local CreatorInformation = MainTab:CreateSection("Information (Section)")
 --local Paragraph1 = MainTab:CreateParagraph({Title = "Current Game:", Content = 'MarketplaceService:GetProductInfo(game.PlaceId).Name'})
 --local Paragraph2 = MainTab:CreateParagraph({Title = "Current UI:", Content = "Rayfield"})
 --local Paragraph3 = MainTab:CreateParagraph({Title = "Script Creator:", Content = "DEVlunar"})
---local Paragraph4 = MainTab:CreateParagraph({Title = "Title Example", Content = "Content Example"})
+local Paragraph = MainTab:CreateParagraph({Title = "Title Example", Content = "Content Example"})
 ----------------------------------------------------------------------------------------------------------------
 local AutoFarmSection0 = AutoFarm:CreateSection("Automaticly Collect Food, Materials, an Bonemeal")
 	local AutoResources = AutoFarm:CreateToggle({
@@ -109,7 +109,7 @@ local AutoFarmSection2 = AutoFarm:CreateSection("Automaticly Collect Chest and E
 	})
 local Divider3 = AutoFarm:CreateDivider()
 ----------------------------------------------------------------------------------------------------------------
-local GodModeDragon = DragonStats:CreateSection("Unkillable Dragon")
+local GodModeDragon = DragonStats:CreateSection("Dragon Stats are unavalable at this time.")
 ----------------------------------------------------------------------------------------------------------------
 local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 	local PlotButton = Teleport:CreateButton({
@@ -119,7 +119,11 @@ local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
    	end,
 	})
 local WorldTeleport = Teleport:CreateSection("Teleport to the selected world")
-local WorldTeleportClarification = Teleport:CreateSection("(Event world are not included)")
+	local World Teleport = Teleport:CreateButton({
+   		Name = "Teleport",
+   		Callback = function()
+   	end,
+	})
 	local WorldList = Teleport:CreateDropdown({
   	 	Name = "Worlds",
    		Options = {"Undercity","Origins","Grassland","Jungle","Volcano","Tundra","Ocean","Desert","Fantasy","Wasteland","Prehistoric"},
@@ -129,12 +133,7 @@ local WorldTeleportClarification = Teleport:CreateSection("(Event world are not 
 		Callback = function(Options)
    	end,
 	})
-	local World Teleport = Teleport:CreateButton({
-   		Name = "To World?",
-   		Callback = function()
-   			-- The function that takes place when the button is pressed
-   	end,
-	})
+local WorldTeleportClarification = Teleport:CreateSection("(Event world are not included)")
 ----------------------------------------------------------------------------------------------------------------
 local Set1 = Settings:CreateSection("Section Example")
 ----------------------------------------------------------------------------------------------------------------
