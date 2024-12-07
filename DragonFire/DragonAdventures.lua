@@ -37,15 +37,13 @@ print ("Dragon adventures script has been located and is running")
       				Key = {"Hello","key"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    			}
 		})
-----------------------------------------------------------------------------------------------------------------
---------Tabs
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local MainTab = Window:CreateTab("Main", "cloudy") -- Main Tab, containing 
 local AutoFarm = Window:CreateTab("Auto", "gamepad") -- Auto Farm, Automaticly kills mobs, collect recorces (Separate food, materials, and bones), eggs, and chest.
 local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Dragon Stats
 local Teleport = Window:CreateTab("Teleport", "locate") -- Teleportation
 local Settings = Window:CreateTab("Settings", "settings") -- Settings
---------Sections
-local Label = MainTab:CreateLabel("Information", "cloud-sun", Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local CreatorInformation = MainTab:CreateSection("Current Game: (game.PlaceId).Name\nCurrent UI: Rayfield\nScript Creator: Dev LunarMoons")
 ----------------------------------------------------------------------------------------------------------------
 local AutoFarmSection0 = AutoFarm:CreateSection("Automaticly Collect Food, Materials, an Bonemeal")
@@ -107,7 +105,7 @@ local Divider3 = AutoFarm:CreateDivider()
 ----------------------------------------------------------------------------------------------------------------
 local GodModeDragon = DragonStats:CreateSection("Dragon Stats are unavalable at this time.")
 ----------------------------------------------------------------------------------------------------------------
---if game.PlaceId == 3475397644 then
+if game.PlaceId == 3475397644 then
 local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 	local PlotButton = Teleport:CreateButton({
    		Name = "Teleport to your plot",
