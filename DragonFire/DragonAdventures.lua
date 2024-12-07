@@ -119,6 +119,7 @@ local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 		end,
 		end,
 	end,
+end,
 })
 end
 local WorldTeleport = Teleport:CreateSection("Teleport to the selected world")
