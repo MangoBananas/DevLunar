@@ -10,15 +10,15 @@ if game.PlaceId == 6590224210 then
 		Text = "Opening MonSoonHub..."
 	})
 --This should be changes as this should be the test script.
-	loadstring(game:HttpGet(""))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/TropicalStorms/DragonFire/DragonAdventures.lua"))()
 	--Dragon Adventures:
     elseif game.PlaceId == 3475397644 then
-	    print ("Game ID: Dragon Adventures")
-	    print (game.PlaceId)
-	    game:GetService("StarterGui"):SetCore("SendNotification",{
-		    Title = "Script Found",
-		    Text = "Opening MonSoonHub..."
-	    })
+	print ("Game ID: Dragon Adventures")
+	print (game.PlaceId)
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = "Script Found",
+		Text = "Opening MonSoonHub..."
+	})
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/TropicalStorms/DragonFire/DragonAdventures.lua"))()
 	--Game is not in the system:
 else
