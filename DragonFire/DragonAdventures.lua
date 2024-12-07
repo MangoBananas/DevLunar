@@ -46,7 +46,7 @@ local Teleport = Window:CreateTab("Teleport", "locate") -- Teleportation
 local Settings = Window:CreateTab("Settings", "settings") -- Settings
 --------Sections
 local Label = MainTab:CreateLabel("Information", "cloud-sun", Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
-local CreatorInformation = MainTab:CreateSection("Current Game: " .. MarketplaceService:GetProductInfo(game.PlaceId).Name .. "\nCurrent UI: Rayfield\nScript Creator: Dev LunarMoons")
+local CreatorInformation = MainTab:CreateSection("Current Game: " .. (game.PlaceId).Name .. "\nCurrent UI: Rayfield\nScript Creator: Dev LunarMoons")
 ----------------------------------------------------------------------------------------------------------------
 local AutoFarmSection0 = AutoFarm:CreateSection("Automaticly Collect Food, Materials, an Bonemeal")
 	local AutoResources = AutoFarm:CreateToggle({
