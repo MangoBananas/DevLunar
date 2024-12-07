@@ -45,7 +45,7 @@ print ("Dragon adventures script has been located and is running")
 		--Sections
 		local CreatorInformation = MainTab:CreateSection("Creator Information")
 		local Main2 = MainTab:CreateSection("Section Example")
-		local AutoFarmSection = AutoFarm:CreateSection("Automaticly Collect Food, Materials, Bones, and Chest")
+		local AutoFarmSection1 = AutoFarm:CreateSection("Automaticly Collect Food, Materials, an Bonemeal")
 			local AutoResources = AutoFarm:CreateToggle({
    				Name = "Auto Resources", 
    				CurrentValue = false,
@@ -53,7 +53,7 @@ print ("Dragon adventures script has been located and is running")
    				Callback = function(Value)
    				end,
 			})
-			local Dropdown = AutoFarm:CreateDropdown({
+			local ResourceName = AutoFarm:CreateDropdown({
   	 			Name = "Resources Nodes",
    				Options = {"Food","Materials","Bonemeal"},
    				CurrentOption = {"Food"},
@@ -64,6 +64,8 @@ print ("Dragon adventures script has been located and is running")
    					-- The variable (Options) is a table of strings for the current selected options
    				end,
 			})
+					local Divider = AutoFarm:CreateDivider()
+			local AutoFarmSection2 = AutoFarm:CreateSection("Automaticly Collect Meat and Fish")
 			local AutoMob = AutoFarm:CreateToggle({
    				Name = "Auto Mob",
    				CurrentValue = false,
