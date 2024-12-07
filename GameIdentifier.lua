@@ -10,7 +10,7 @@ if game.PlaceId == 6590224210 then
 		Text = "Opening MonSoonHub..."
 	})
 --This should be changes as this should be the test script.
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/MangoBananas/DevLunar/refs/heads/TropicalStorms/DragonFire/DragonAdventures.lua"))()
+	loadstring(game:HttpGet(""))()
 	--Dragon Adventures:
     elseif game.PlaceId == 3475397644 then
 	    print ("Game ID: Dragon Adventures")
