@@ -46,6 +46,91 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
    		}
 	})
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Not to sure what this does, check later
+UserInputService.InputBegan:Connect(function(Input, GPE)
+    if Input.KeyCode == Enum.KeyCode.LeftShift and Sp then
+        VG.IsA(Player.Character, "Humanoid").WalkSpeed = 25
+    end
+end)
+UserInputService.InputEnded:Connect(function(Input, GPE)
+    if Input.KeyCode == Enum.KeyCode.LeftShift and Sp then
+        VG.IsA(Player.Character, "Humanoid").WalkSpeed = 16
+    end
+end)
+------------------------------------------------------------
+-- Lists --
+local Worlds = {}
+local Bones = {}
+local Foods = {}
+local Resources = {}
+local Dragons = {}
+local Eggs = {}
+local Nodes = {"Food", "Materials", "Bonemeals"}
+------------------------------------------------------------
+-- Have shortened remote functions and events
+local RF, RE
+for i,v in next, getgc() do
+if type(v) == "function" and islclosure(v) then
+if debug.getinfo(v).name == "GetRemoteFunction" then
+	RF = v 
+elseif debug.getinfo(v).name == "GetRemoteEvent" then
+        RE = v
+end
+end
+end
+------------------------------------------------------------
+local AntiTeleport = function(Part)
+    VG.Tween(VG.GetHumanoid().SeatPart.Parent.PrimaryPart, Part.CFrame, 500, Vector3.new(0,5,0), true)
+end
+------------------------------------------------------------
+local GetEgg = function()
+    local Target, MaxDistance = nil, math.huge
+    local T = Workspace.Terrain
+    for _,v in next, Workspace.Interactions.Nodes.Eggs.ActiveNodes:GetChildren() do
+        if v:IsA("Model") and v:FindFirstChild("EggModel") then
+            local Mag = VG.Mag(v.EggModel:GetModelCFrame(), Player.Character.HumanoidRootPart)
+            if Mag < MaxDistance and Mag < TMag then
+                MaxDistance = Mag
+                Target = v
+            end
+        end
+    end
+    return Target
+end
+------------------------------------------------------------
+-- Food --
+for i, v in next, ReplicatedStorage.Storage.Items.Items.Food:GetChildren() do
+if v:IsA("ModuleScript") then
+for i, _ in next, require(v) do
+table.insert(foods, i)
+end
+end
+end
+-- Materials --
+for i, v in next, ReplicatedStorage.Storage.Items.Items.Food:GetChildren() do
+if v:IsA("ModuleScript") then
+for i, v in next, require(v) do
+table.insert(list, i)
+end
+end
+end
+-- Bonemeal --
+for i, v in next, ReplicatedStorage.Storage.Items.Items.Food:GetChildren() do
+if v:IsA("ModuleScript") then
+for i, v in next, require(v) do
+table.insert(list, i)
+end
+end
+end
+-- Eggs --
+for i, v in next, ReplicatedStorage.Storage.Items.Items.Eggs:GetChildren() do
+if v:IsA("ModuleScript") then
+for i,v in next, require(v) do
+table.insert(Eggs, i)
+end
+end
+end
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local MainTab = Window:CreateTab("Main", "cloudy") -- Main Tab
 local AutoFarm = Window:CreateTab("Auto", "gamepad") -- Auto Farm
 local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Dragon Stats
@@ -58,7 +143,7 @@ local AutoFarmSection0 = AutoFarm:CreateSection("Automaticly Collect Food, Mater
 	local AutoResources = AutoFarm:CreateToggle({
    		Name = "Collect Resources", 
    		CurrentValue = false,
-		Flag = "autoResourceToggle", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+		Flag = "autoResourceToggle",
    		Callback = function(Value)
 			-- The function that takes place when the toggle is pressed
   			-- The variable (Value) is a boolean on whether the toggle is true or false
@@ -149,3 +234,4 @@ local WorldTeleportClarification = Teleport:CreateSection("(Event world are not 
 ----------------------------------------------------------------------------------------------------------------
 local Set1 = Settings:CreateSection("Section Example")
 ----------------------------------------------------------------------------------------------------------------
+Rayfield:LoadConfiguration()
