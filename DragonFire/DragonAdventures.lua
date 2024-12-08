@@ -1,45 +1,53 @@
--- Print in console showing that the script was found.
-print ("Dragon adventures script has been located and is running")
-----------------------------------------------------------------------------------------------------------------
-	-- Base for the UI
-	local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-		--
-		local Window = Rayfield:CreateWindow({
-   			Name = "~:| MonSoon Hub |:~",
-   			Icon = "cloudy",
-   			LoadingTitle = "MonSoon Hub",
-   			LoadingSubtitle = "Loading: ", -- .. MarketplaceService:GetProductInfo(game.PlaceId).Name
-   			Theme = "AmberGlow", -- https://docs.sirius.menu/rayfield/configuration/themes
-
-  			 DisableRayfieldPrompts = false,
-  			 DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+print ("MonSoon Hub Connected:" .. MarketplaceService:GetProductInfo(game.PlaceId).Name)
+-- This script is made by DevLunarMoons as a part of the MonSoon Developer Hub.
+------------------------------------------------------------------------------------
+--									          --
+--            __  ___           _____                      __  __      __         --
+--           /  |/  /___  ____ / ___/____  ____  ____     / / / /_  __/ /_        --
+--          / /|_/ / __ \/ __ \\__ \/ __ \/ __ \/ __ \   / /_/ / / / / __ \       --
+--         / /  / / /_/ / / / /__/ / /_/ / /_/ / / / /  / __  / /_/ / /_/ /       --
+--        /_/  /_/\____/_/ /_/____/\____/\____/_/ /_/  /_/ /_/\__,_/_.___/        --
+--									          --
+--    									          --   
+--    				made by: DevLunarMoon			          --    
+------------------------------------------------------------------------------------
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+	local Window = Rayfield:CreateWindow({
+   		Name = "~:| MonSoon Hub |:~",
+		Icon = "cloudy",
+  		LoadingTitle = "MonSoon Hub",
+   		LoadingSubtitle = "Loading",
+   		Theme = "AmberGlow",
+--		(https://docs.sirius.menu/rayfield/configuration/themes)
+  		DisableRayfieldPrompts = false,
+  		DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
 
    		ConfigurationSaving = {
-      			Enabled = true,
-      			FolderName = nil, -- Create a custom folder for your hub/game
-      			FileName = "MonSoonHub"
+      		Enabled = true,
+      		FolderName = nil, -- Create a custom folder for your hub/game
+      		FileName = "MonSoonHub"
   		},
 
    		Discord = {
-      			Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
-      			Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
-      			RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+      		Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      		Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      		RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    		},
 
    		KeySystem = false, -- Set this to true to use our key system
-   			KeySettings = {
-      				Title = "MonSoon Hub",
-      				Subtitle = "Key System",
-      				Note = "Find a private server to use the script.\nMany DA Youtubers have one.", -- Use this to tell the user how to get a key
-      				FileName = "Op3perationFore7stFire", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-      				SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-      				GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      				Key = {"Hello","key"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
-   			}
-		})
+   		KeySettings = {
+      			Title = "MonSoon Hub",
+      			Subtitle = "Key System",
+      			Note = "Find a private server to use the script.\nMany DA Youtubers have one.",
+      			FileName = "Op3perationFore7stFire",
+      			SaveKey = true,
+      			GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      			Key = {"Hello","key"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   		}
+	})
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-local MainTab = Window:CreateTab("Main", "cloudy") -- Main Tab, containing 
-local AutoFarm = Window:CreateTab("Auto", "gamepad") -- Auto Farm, Automaticly kills mobs, collect recorces (Separate food, materials, and bones), eggs, and chest.
+local MainTab = Window:CreateTab("Main", "cloudy") -- Main Tab
+local AutoFarm = Window:CreateTab("Auto", "gamepad") -- Auto Farm
 local DragonStats = Window:CreateTab("Dragon Stats", "wind") -- Dragon Stats
 local Teleport = Window:CreateTab("Teleport", "locate") -- Teleportation
 local Settings = Window:CreateTab("Settings", "settings") -- Settings
@@ -108,17 +116,17 @@ local GodModeDragon = DragonStats:CreateSection("Dragon Stats are unavalable at 
 if game.PlaceId == 3475397644 then
 local HomePlotTeleport = Teleport:CreateSection("Teleport to your plot")
 	local PlotButton = Teleport:CreateButton({
+		--This function is broken
    		Name = "Teleport to your plot",
-   		Callback = function(
-			for i, v in next, Workspace.Interactions:GetDescendants() do
+   		Callback = function()
+			for i, v in next, Workspace.Interactions.Plots.Portals:GetDescendants() do
 			if v:IsA("TextLabel") and v.Name:match("Player")  then
 			if  v.Text == Player.PlayerGui.WorkspaceGui[Player.Name .. "_DisplayGui"].ContainerFrame.NameLabel.Text then
 --			print ("Going to your base plot --> --> -->")
-			firetouchinterest(Player.Character.HumanoidRootPart, v.Parent.Parent.Parent.TeleportPart, 0)
+			firetouchinterest(Player.Character.HumanoidRootPart, v.Parent.Parent.Parent.TeleportPart, 0) --Might need to get rid of some of the parents.
 			end,
 			end,
 			end,
-			)
 		end,
 })
 end
